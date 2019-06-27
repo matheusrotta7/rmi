@@ -123,6 +123,44 @@ public class AddC extends UnicastRemoteObject implements AddI {
         return success;
     }
 
+    public ArrayList<String> opt4 (String user) throws Exception {
+        String contents = new String(Files.readAllBytes(Paths.get("data.txt")));
+        // return contents;
+        ArrayList<String> exp_list = new ArrayList<String>();
+        Scanner sc = new Scanner (contents);
+        boolean correct_email = false;
+        outter:
+        while (sc.hasNext()) {
+            String[] a = sc.nextLine().split("[:]");
+            if (a[0].equals("Email")) {
+                if (a[1].equals(user)) {
+                    correct_email = true;
+                }
+                else {
+                    correct_email = false;
+                }
+            }
+            else if (a[0].equals("Experiência")) {
+                // System.out.println(a[1]);
+                if (correct_email) {
+                    exp_list.add(a[1]); //add first experience, which comes after the ':'
+                    while (sc.hasNext()) {
+                        String cur = sc.nextLine();
+                        if (cur.equals("-----")) {
+                            break outter;
+                        }
+                        else {
+                            exp_list.add(cur);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        return exp_list;
+    }
+
     public String opt5 () throws Exception {
 
         String contents = new String(Files.readAllBytes(Paths.get("data.txt")));
@@ -130,6 +168,34 @@ public class AddC extends UnicastRemoteObject implements AddI {
         return contents;
     }
 
+    public String opt6 (String user) throws Exception {
+        String contents = new String(Files.readAllBytes(Paths.get("data.txt")));
+        // return contents;
+        String result = "";
+        Scanner sc = new Scanner (contents);
+        // boolean correct_email = false;
+        outter:
+        while (sc.hasNext()) {
+            String b = sc.nextLine();
+            String[] a = b.split("[:]");
+            if (a[0].equals("Email")) {
+                if (a[1].equals(user)) {
+                    result += b;
+                    result += "\n";
+                    while (sc.hasNext()) {
+                        String cur = sc.nextLine();
+                        if (cur.equals("-----")) {
+                            break outter;
+                        }
+                        else {
+                            result += cur;
+                            result += "\n";
+                        }
+                    }
+                }
+            }
+        }
 
-
+        return result;
+    }
 }

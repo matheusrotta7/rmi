@@ -5,6 +5,7 @@ Residência:Campinas
 Formação Acadêmica:Engenharia da Computação (AA)
 Habilidades:Machine Learning, Computer Security
 Experiência:(1) Estágio de I.C. em Cepetro na área de ML
+-----
 
 
 Email:gps_016@gmail.com
@@ -14,6 +15,7 @@ Residência:Campinas
 Formação Acadêmica:Engenharia da Computação (AA)
 Habilidades:HPC, Algoritmos
 Experiência:(1) Estágio na Semantix em ML
+-----
 
 
 Email:roger@unicamp.br
@@ -23,6 +25,8 @@ Residência:sjc
 Formação Acadêmica:Letras
 Habilidades:Sonetista, Tradução Juramentada, Romancista, Linguística
 Experiência:(1) Estágio no MPF trabalhando com tradução juramentada
+            (2) Experiência 2
+-----
 
 
 Email:carlos@null
@@ -32,7 +36,7 @@ Residência:itu
 Formação Acadêmica:Engenharia Elétrica
 Habilidades:VHDL, Projetista de Fontes, Sis
 Experiência:(1) Estágio na Eldorado trabalhando com Processamento de Sinais
-
+-----
 
 Email:kiki@gmail.com
 Nome Completo:Alessandra Ayumi Simasaki
@@ -41,3 +45,4 @@ Residência:Pirassununga
 Formação Acadêmica:Medicina Veterinária
 Habilidades:Many Skills
 Experiência:(1) Much experience
+-----
