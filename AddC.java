@@ -42,4 +42,33 @@ public class AddC extends UnicastRemoteObject implements AddI {
         return namelist;
     }
 
+    public ArrayList<String> opt2 (String city) throws Exception {
+
+        String contents = new String(Files.readAllBytes(Paths.get("data.txt")));
+        // return contents;
+        ArrayList<String> skill_list = new ArrayList<String>();
+        Scanner sc = new Scanner (contents);
+        boolean correct_city = false;
+        while (sc.hasNext()) {
+            String[] a = sc.nextLine().split("[:]");
+            if (a[0].equals("Residência")) {
+                if (a[1].equals(city)) {
+                    correct_city = true;
+                }
+                else {
+                    correct_city = false;
+                }
+            }
+            else if (a[0].equals("Habilidades")) {
+                // System.out.println(a[1]);
+                if (correct_city) {
+                    skill_list.add(a[1]);
+                }
+            }
+
+        }
+
+        return skill_list;
+    }
+
 }

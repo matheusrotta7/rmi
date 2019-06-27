@@ -7,6 +7,7 @@ public class Server {
         Naming.rebind("ADD", obj);
 		Naming.rebind("SUBTRACT", obj);
         Naming.rebind("OPT1", obj);
+        Naming.rebind("OPT2", obj);
 		System.out.println("server started");
 	}
 
