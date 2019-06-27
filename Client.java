@@ -40,14 +40,18 @@ public class Client {
             else if (choice == 3) {
                 //user chose to add new experience to a certain user
                 //let's ask for the user
-                // Scanner sc = new Scanner(System.in);
-                // System.out.println("Please inform the desired user: ");
-                // String user = sc.nextLine();
-                // System.out.println("Please inform the desired experience: ");
-                // String exp = sc.nextLine();
-                // obj = (AddI) Naming.lookup("OPT3");
-                // obj.opt3(user, exp);
-                // System.out.println("\n\nDatabase succesfully updated" + "\n\n");
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Please inform the desired user email: ");
+                String email = sc.nextLine();
+                System.out.println("Please inform the desired experience: ");
+                String exp = sc.nextLine();
+                obj = (AddI) Naming.lookup("OPT3");
+                boolean success = obj.opt3(email, exp);
+                if (success) {
+                    System.out.println("\n\nDatabase succesfully updated" + "\n\n");
+                } else {
+                    System.out.println("\n\nDatabase update failed" + "\n\n");
+                }
             }
             else if (choice == 4) {
 

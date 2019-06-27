@@ -8,10 +8,10 @@ public class Server {
 		Naming.rebind("SUBTRACT", obj);
         Naming.rebind("OPT1", obj);
         Naming.rebind("OPT2", obj);
-        // Naming.rebind("OPT3", obj);
-        // Naming.rebind("OPT4", obj);
+        Naming.rebind("OPT3", obj);
+        Naming.rebind("OPT4", obj);
         Naming.rebind("OPT5", obj);
-        // Naming.rebind("OPT6", obj);
+        Naming.rebind("OPT6", obj);
 		System.out.println("server started");
 	}
 
