@@ -113,11 +113,87 @@ public class AddC extends UnicastRemoteObject implements AddI {
     //     }
     // }
 
+    public ArrayList<String> opt4 (String user) throws Exception {
+        String contents = new String(Files.readAllBytes(Paths.get("data.txt")));
+        // return contents;
+        ArrayList<String> exp_list = new ArrayList<String>();
+        Scanner sc = new Scanner (contents);
+        boolean correct_email = false;
+        outter:
+        while (sc.hasNext()) {
+            String[] a = sc.nextLine().split("[:]");
+            if (a[0].equals("Email")) {
+                if (a[1].equals(user)) {
+                    correct_email = true;
+                }
+                else {
+                    correct_email = false;
+                }
+            }
+            else if (a[0].equals("Experiência")) {
+                // System.out.println(a[1]);
+                if (correct_email) {
+                    exp_list.add(a[1]); //add first experience, which comes after the ':'
+                    while (sc.hasNext()) {
+                        String cur = sc.nextLine();
+                        if (cur.equals("-----")) {
+                            break outter;
+                        }
+                        else {
+                            exp_list.add(cur);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        return exp_list;
+    }
+
     public String opt5 () throws Exception {
 
         String contents = new String(Files.readAllBytes(Paths.get("data.txt")));
 
         return contents;
+    }
+
+    public ArrayList<String> opt6 (String user) throws Exception {
+        String contents = new String(Files.readAllBytes(Paths.get("data.txt")));
+        // return contents;
+        ArrayList<String> exp_list = new ArrayList<String>();
+        Scanner sc = new Scanner (contents);
+        boolean correct_email = false;
+        outter:
+        while (sc.hasNext()) {
+            String[] a = sc.nextLine().split("[:]");
+            if (a[0].equals("Email")) {
+                if (a[1].equals(user)) {
+                    correct_email = true;
+                }
+                else {
+                    correct_email = false;
+                }
+            }
+            else if (a[0].equals("Experiência")) {
+                // System.out.println(a[1]);
+                if (correct_email) {
+                    exp_list.add(a[1]); //add first experience, which comes after the ':'
+                    while (sc.hasNext()) {
+                        String cur = sc.nextLine();
+                        if (cur.equals("-----")) {
+                            break outter;
+                        }
+                        else {
+                            exp_list.add(cur);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        return exp_list;
     }
 
 

@@ -50,7 +50,14 @@ public class Client {
                 // System.out.println("\n\nDatabase succesfully updated" + "\n\n");
             }
             else if (choice == 4) {
-
+                //user chose to show user's experience given their email
+                //let's ask the email
+                System.out.println("Please inform the desired email: ");
+                Scanner sc = new Scanner(System.in);
+                String email = sc.nextLine();
+                obj = (AddI) Naming.lookup("OPT4");
+                ArrayList<String> result = obj.opt4(email);
+                System.out.println("\n\nThe experience of the user is:\n" + result + "\n\n");
             }
             else if (choice == 5) {
                 //user chose to show all info
@@ -59,7 +66,14 @@ public class Client {
                 System.out.println("\n\nHere is all the info of the database:\n\n" + result + "\n\n");
             }
             else if (choice == 6) {
-
+                //user chose to show user's whole info given their email
+                //let's ask the email
+                System.out.println("Please inform the desired email: ");
+                Scanner sc = new Scanner(System.in);
+                String email = sc.nextLine();
+                obj = (AddI) Naming.lookup("OPT6");
+                ArrayList<String> result = obj.opt6(email);
+                System.out.println("\n\nThe user's whole info is:\n" + result + "\n\n");
             }
         }
 	}
