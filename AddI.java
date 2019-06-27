@@ -7,5 +7,9 @@ public interface AddI extends Remote {
 	public int subtract (int x, int y) throws Exception;
     public ArrayList<String> opt1 (String course) throws Exception;
     public ArrayList<String> opt2 (String cidade) throws Exception;
+    // public void opt3 (String user, String exp) throws Exception;
+    // public void opt4 (String user, String exp) throws Exception;
+    public String opt5 () throws Exception;
+    // public void opt6 (String user, String exp) throws Exception;
 
 }
