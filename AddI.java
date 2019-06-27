@@ -10,6 +10,6 @@ public interface AddI extends Remote {
     // public void opt3 (String user, String exp) throws Exception;
     public ArrayList<String> opt4 (String user) throws Exception;
     public String opt5 () throws Exception;
-    // public void opt6 (String user, String exp) throws Exception;
+    public String opt6 (String user) throws Exception;
 
 }

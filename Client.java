@@ -72,7 +72,7 @@ public class Client {
                 Scanner sc = new Scanner(System.in);
                 String email = sc.nextLine();
                 obj = (AddI) Naming.lookup("OPT6");
-                ArrayList<String> result = obj.opt6(email);
+                String result = obj.opt6(email);
                 System.out.println("\n\nThe user's whole info is:\n" + result + "\n\n");
             }
         }
