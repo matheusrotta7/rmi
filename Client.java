@@ -1,17 +1,16 @@
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.rmi.Naming;
 import java.io.*;
 import java.util.*;
 
-
 public class Client {
 
 	public static void main (String[] args) throws Exception {
-        AddI obj = (AddI) Naming.lookup("ADD");
-		AddI obj2 = (AddI) Naming.lookup("SUBTRACT");
-        int n = obj.add(12, 34);
-		int m = obj2.subtract(12, 34);
-        System.out.println("Addition = " + n);
-		System.out.println("Subtraction = " + m);
+        System.out.println("Please insert the Server IP Address: ");
+        Scanner scanner = new Scanner(System.in);
+        String ipAddress = scanner.nextLine();
+        Registry registry = LocateRegistry.getRegistry(ipAddress, 1099);
 
         while (true) {
             Scanner myObj = new Scanner(System.in);  // Create a Scanner object
@@ -23,7 +22,7 @@ public class Client {
                 System.out.println("Please inform the desired course: ");
                 Scanner sc = new Scanner(System.in);  //
                 String course = sc.nextLine();
-                obj = (AddI) Naming.lookup("OPT1");
+                AddI obj = (AddI) registry.lookup("OPT1");
                 ArrayList<String> result = obj.opt1(course);
                 System.out.println("\n\nThe students that graduated said course are:\n" + result + "\n\n");
             }
@@ -33,7 +32,7 @@ public class Client {
                 System.out.println("Please inform the desired city: ");
                 Scanner sc = new Scanner(System.in);
                 String city = sc.nextLine();
-                obj = (AddI) Naming.lookup("OPT2");
+                AddI obj = (AddI) registry.lookup("OPT2");
                 ArrayList<String> result = obj.opt2(city);
                 System.out.println("\n\nThe skills in said city are:\n" + result + "\n\n");
             }
@@ -45,7 +44,7 @@ public class Client {
                 String email = sc.nextLine();
                 System.out.println("Please inform the desired experience: ");
                 String exp = sc.nextLine();
-                obj = (AddI) Naming.lookup("OPT3");
+                AddI obj = (AddI) registry.lookup("OPT3");
                 boolean success = obj.opt3(email, exp);
                 if (success) {
                     System.out.println("\n\nDatabase succesfully updated" + "\n\n");
@@ -59,13 +58,13 @@ public class Client {
                 System.out.println("Please inform the desired email: ");
                 Scanner sc = new Scanner(System.in);
                 String email = sc.nextLine();
-                obj = (AddI) Naming.lookup("OPT4");
+                AddI obj = (AddI) registry.lookup("OPT4");
                 ArrayList<String> result = obj.opt4(email);
                 System.out.println("\n\nThe experience of the user is:\n" + result + "\n\n");
             }
             else if (choice == 5) {
                 //user chose to show all info
-                obj = (AddI) Naming.lookup("OPT5");
+                AddI obj = (AddI) registry.lookup("OPT5");
                 String result = obj.opt5();
                 System.out.println("\n\nHere is all the info of the database:\n\n" + result + "\n\n");
             }
@@ -75,7 +74,7 @@ public class Client {
                 System.out.println("Please inform the desired email: ");
                 Scanner sc = new Scanner(System.in);
                 String email = sc.nextLine();
-                obj = (AddI) Naming.lookup("OPT6");
+                AddI obj = (AddI) registry.lookup("OPT6");
                 String result = obj.opt6(email);
                 System.out.println("\n\nThe user's whole info is:\n" + result + "\n\n");
             }
